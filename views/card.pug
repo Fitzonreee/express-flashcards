@@ -1,16 +1,9 @@
-doctype html
-html(lang="en")
-  head
-    title Flashmania
-  body
-    header
-      h1 Flashmania
-    section#content
-      h2= prompt
-      if hint
-        p
-          i Hint: #{hint}
-      else
-        p This question is easy, therefore there is not hint.
-    footer
-      p An app to help you study
+extends layout.pug
+block content
+  section#content
+    h2= prompt
+    if hint
+      p
+        i Hint: #{hint}
+    else
+      p This question is easy, therefore there is not hint.
