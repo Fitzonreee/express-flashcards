@@ -8,8 +8,13 @@ app.get('/', (req, res) => {
   res.render('index')
 });
 
-app.get('/hello', (req, res) => {
-  res.send(Date.now)
+const cardData = {
+  prompt: "Who is Luke's father?",
+  hint: "It ryhmes with Garth Day-der"
+}
+
+app.get('/cards', (req, res) => {
+  res.render('card', cardData)
 });
 
 app.listen(3000, () => {
