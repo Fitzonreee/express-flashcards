@@ -1,0 +1,7 @@
+extends layout.pug
+block content
+  h2 This is the hello page, dog
+  form(action="/hello", method="post")
+    label Please enter your name
+      input(type="text", name="username")
+    button(type="submit") Submit
