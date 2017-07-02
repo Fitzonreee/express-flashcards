@@ -10,15 +10,6 @@ router.get('/', (req, res) => {
   }
 });
 
-const cardData = {
-  prompt: "Who is Luke's father?",
-  hint: "It ryhmes with Garth Day-der"
-}
-
-router.get('/cards', (req, res) => {
-  res.render('card', cardData)
-});
-
 router.get('/hello', (req, res) => {
   const name = req.cookies.username;
   if (name) {
