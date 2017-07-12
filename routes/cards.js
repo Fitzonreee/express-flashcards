@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const { data } = require('../data/flashcardData.json');
+const { cards } = data;
 
-const cardData = {
-  prompt: "Who is Luke's father?",
-  hint: "It ryhmes with Garth Day-der"
-}
-
-router.get('/', (req, res) => {
-  res.render('card', cardData)
+router.get('/:id', (req, res) => {
+  res.render('card', {
+    prompt: cards[req.params.id].question,
+    hint: cards[req.params.id].hint
+  });
 });
 
 module.exports = router;
