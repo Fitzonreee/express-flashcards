@@ -5,7 +5,9 @@ const { cards } = data;
 
 // route is /cards
 router.get('/', (req, res) => {
-
+  const numOfCards = cards.length;
+  const randomCard = Math.floor( Math.random() * numOfCards );
+  res.redirect(`/cards/${randomCard}?side=question`)
 });
 
 // routes is /cards/id
